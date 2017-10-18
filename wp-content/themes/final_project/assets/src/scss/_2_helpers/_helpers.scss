@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #HELPERS
+\*------------------------------------*/
+
+@import "animations";
+@import "extends";
+@import "mixins";
+@import "functions";
+@import "color";
+@import "breakpoints";
+@import "variables";
+@import "theme";
+@import "arrows";
+@import "zindex";
+
+// HELPERS
+.centered {
+	text-align: center;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.phone {
+	color: $beige;
+}
+
+.padding {
+	padding: 1em;
+}
+
+
+// DIVIDERS
+.pink-divider {
+	background-color: $pink;
+	width: 35px;
+	height: 7px;
+	margin: auto;
+}

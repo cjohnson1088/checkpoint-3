@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+// BUTTONS
+.red-book-now-wrapper {
+	width: 100%;
+	margin: auto;
+	padding-top: 1em;
+
+	:hover {
+		color: $beige;
+		border: $beige solid 3px;
+		background-color: $red;
+	}
+}
+
+.pink-book-now-wrapper {
+	width: 100%;
+	margin: auto;
+	padding-top: 1em;
+
+	:hover {
+		color: $beige;
+		border: $beige solid 3px;
+		background-color: $pink;
+	}
+}
+
+.red-book-now {
+	font-family: $san-serif;
+	color: $red;
+	font-size: 1em;
+	letter-spacing: 3.5px;
+	background-color: rgba(255, 255, 255, 0);
+	border: $red solid 3px;
+	padding: 10px;
+	width: 50%;
+	max-width: 236px;
+}
+
+.pink-book-now {
+	font-family: $san-serif;
+	color: $pink;
+	font-size: 1em;
+	letter-spacing: 3.5px;
+	background-color: rgba(255, 255, 255, 0);
+	border: $pink solid 3px;
+	padding: 10px;
+	width: 75%;
+	max-width: 236px;
+}

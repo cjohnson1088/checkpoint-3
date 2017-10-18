@@ -1,0 +1,74 @@
+/*------------------------------------*\
+    #FOOTER
+\*------------------------------------*/
+// HOME FOOTER
+footer {
+	background-color: $pink;
+	color: $maroon;
+
+	@include breakpoint(portrait) {
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: auto;
+			grid-gap: 10px;
+			padding: 1em 0 1em 1em;
+			}
+	}
+
+		.location {
+			align-self: center;
+
+			.times {
+				padding: 10px;
+				margin: auto;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: auto;
+				color: $red-black;
+			}
+		}
+
+	.copywrite {
+		font-size: .75em;
+		padding: 10px;
+
+	}
+}
+
+// SUB PAGES FOOTER
+.sub-page-footer {
+
+	@include breakpoint(small) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.grid {
+			display: block;
+			padding: 1em;
+
+			@include breakpoint(small) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
+	}
+}
+
+.maroon-footer {
+	color: $pink;
+	background-color: $maroon;
+
+	@include breakpoint(portrait) {
+		margin-top: 5em;
+	}
+}
+
+.red-footer {
+	color: $beige;
+	background-color: $red;
+
+	.copywrite {
+		color: $pink;
+	}
+}

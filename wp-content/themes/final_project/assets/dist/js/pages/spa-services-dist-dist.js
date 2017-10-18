@@ -1,0 +1,1 @@
+jQuery.backstretch("/wp-content/themes/final_project/assets/dist/img/spa-services-bg.jpg");

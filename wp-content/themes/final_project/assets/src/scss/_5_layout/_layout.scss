@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+@import "header";
+@import "footer";
+
+#spa-packages-main {
+
+  @include breakpoint(small) {
+    margin-top: 75%;
+  }
+}

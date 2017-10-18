@@ -1,0 +1,436 @@
+/*------------------------------------*\
+    #PIECES
+\*------------------------------------*/
+
+@import "gravity-forms";
+@import "ratios";
+
+// HEADINGS
+h1,
+h2,
+h3 {
+	@include headings;
+}
+
+h4 {
+	font-family: $san-serif;
+	font-size: .9em;
+
+	.fancy {
+		font-family: $script;
+		font-size: 2.5em;
+		margin-right: 5px;
+		color: $beige;
+	}
+}
+
+.homepage-heading-wrapper {
+	position: absolute;
+	padding: 1em;
+	top: 40%;
+	left: 25%;
+
+	@include breakpoint(large-mobile) {
+		top: 50%;
+	}
+
+	@include breakpoint(small) {
+		top: 60%;
+	}
+
+	@include breakpoint(portrait) {
+		top: 25%;
+	}
+
+	#homepage-heading {
+	  color: $red-black;
+	}
+}
+
+.homepage-heading_hello {
+	z-index: 10;
+	position: relative;
+}
+
+.homepage-heading_our {
+	z-index: 10;
+	position: relative;
+	right: 85px;
+  top: -5px;
+}
+
+.special-heading {
+  color: $beige;
+  font-family: $script;
+  text-transform: capitalize;
+  display: block;
+  font-size: 7rem;
+  line-height: 12px;
+  margin-left: -.52em;
+	text-shadow: 0 3px 4px rgba(31, 31, 31, 0.75);
+	font-weight: 500;
+	z-index: 5;
+	position: relative;
+
+	&.red {
+		color: $maroon;
+	}
+}
+
+	.spa {
+		color: $red-black;
+	}
+
+h2,
+h3 {
+	padding-bottom: .5em;
+}
+
+// SPA PACKAGES
+.spa-packages-heading {
+	position: absolute;
+  left: 25%;
+
+	@include breakpoint(small) {
+		left: 50%;
+    top: 50%;
+	}
+
+	.spa-packages-heading_spa {
+		position: relative;
+		z-index: 10;
+		color: $red;
+		left: -70px;
+		top: -15px;
+	}
+}
+
+#home-main {
+	background-image: url("../img/flower-overlay.png");
+	background-color: $beige;
+	background-blend-mode: soft-light;
+	padding: 1em;
+	color: $maroon;
+}
+
+// HOME SOCIAL MEDIA
+.social-media-wrapper {
+	background-color: $maroon;
+	padding: 10px 20px;
+	align-self: center;
+	justify-self: end;
+
+	&.left {
+		@include breakpoint(portrait) {
+			position: absolute;
+		}
+	}
+
+	.social-media {
+		text-align: center;
+		position: relative;
+		z-index: 100;
+
+		@include breakpoint(portrait) {
+			float: right;
+			display: grid;
+		}
+
+		.icon {
+			fill: $beige;
+			max-width: 45px;
+			height: 45px;
+			padding: 5px;
+
+			:hover {
+				fill: $red;
+			}
+		}
+	}
+}
+
+// SOCIAL MEDIA SUB PAGES
+.sub-page-social-media {
+	display: flex;
+	justify-content: center;
+
+	@include breakpoint(small) {
+		margin-left: 10%;
+		align-self: center;
+	}
+
+	a {
+		.icon {
+			position: relative;
+			z-index: 100;
+			fill: $maroon;
+			max-width: 45px;
+			max-height: 45px;
+			padding: 10px;
+
+			:hover {
+				fill: $beige;
+			}
+		}
+
+		.red {
+			fill: $red;
+		}
+
+		.pink {
+			fill: $pink;
+		}
+
+		.beige {
+			fill: $beige;
+		}
+	}
+}
+
+article {
+	padding: 1em;
+
+	h3 {
+		text-transform: inherit;
+		padding-top: .5em;
+		color: $red;
+
+		.special {
+			font-family: $script;
+			text-transform: capitalize;
+			font-size: 2em;
+
+			:hover {
+				text-decoration: underline;
+			}
+
+			a {
+				color: $red;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+// CARDS
+.margin-auto {
+	@include breakpoint(portrait) {
+		width: 75%;
+		margin: auto;
+	}
+}
+.card-package-wrapper {
+	@include breakpoint(small) {
+		margin-top: -25%;
+	}
+}
+
+.package-wrapper {
+	margin-top: 50px;
+	width: 100%;
+	color: $beige;
+	text-align: center;
+
+	@include breakpoint(portrait) {
+		max-width: 733px;
+	}
+
+	&.maroon {
+		background-color: $maroon;
+	}
+
+	&.red {
+		background-color: $red;
+	}
+
+	.package {
+		@include breakpoint(portrait) {
+			display: flex;
+		}
+	}
+
+	.package-image {
+		@include breakpoint(portrait) {
+			overflow: hidden;
+	    display: flex;
+			width: 100%;
+			max-width: 271px;
+		}
+
+			img {
+			width: 100%;
+			max-height: 350px;
+			object-position: top;
+			object-fit: cover;
+
+			@include breakpoint(portrait) {
+				width: 271px;
+			  align-self: center;
+			  object-fit: cover;
+			}
+		}
+	}
+
+	.package-content {
+		padding: 1em;
+		align-self: center;
+
+		p {
+			padding: 10px 0;
+		}
+	}
+}
+
+.card-wrapper {
+	width: 100%;
+	display: flex;
+	grid-area: card;
+
+	&.threading {
+		color: $beige;
+		background-color: $maroon;
+	}
+
+	&.booking {
+		color: $maroon;
+		background-color: $beige;
+	}
+
+	.card {
+		width: 100%;
+		display: flex;
+
+		.card-content {
+			padding: 2em;
+			align-self: center;
+
+			p {
+				padding: 1em;
+
+				a {
+					color: $red;
+				}
+
+				:hover {
+					color: $red-black;
+				}
+			}
+		}
+
+		.card-image {
+			width: 45%;
+			max-width: 467px;
+			display: none;
+
+			@include breakpoint(portrait) {
+		    display: flex;
+		  }
+
+			img {
+				object-fit: cover;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+// BLOG
+#blog-main {
+	margin-top: 15%;
+}
+
+.blog-entry-wrapper {
+	color: $maroon;
+	background-color: $beige-overlay;
+	padding: 2em;
+	text-align: center;
+	margin-top: 25%;
+
+	@include breakpoint(portrait) {
+		width: 75%;
+    position: relative;
+    left: 120px;
+    top: 50px;
+	}
+
+	@include breakpoint(landscape) {
+		width: 50%;
+	}
+
+	.img-wrapper {
+
+		img {
+		width: 75%;
+		padding: 1em;
+		}
+	}
+
+	p {
+		text-align: left;
+		padding: 10px;
+	}
+
+	.entry-data {
+		color: $red;
+		font-size: .75em;
+		font-style: italic;
+
+		a {
+			color: $red;
+			font-style: normal;
+		}
+	}
+}
+
+// ASIDE
+.sidebar {
+	@include breakpoint(landscape) {
+		width: 32%;
+    position: absolute;
+    right: 0;
+    top: 275px;
+	}
+}
+aside {
+	background-color: $beige;
+  margin: 1em;
+	border: 1px solid #ddd;
+
+	@include breakpoint(portrait) {
+		width: 50%;
+    margin: auto;
+	}
+
+	@include breakpoint(landscape) {
+		width: 75%;
+	}
+
+	.archive-wrapper {
+		padding: 0 1em 1em 1em;
+
+		.archive-content {
+			padding-top: 1em;
+
+			h3 {
+				text-align: center;
+				color: $red;
+			}
+
+			ul {
+
+				li {
+					list-style: none;
+					border-bottom: rgba(166, 94, 88, 0.68) .25px solid;
+					padding: 10px 0;
+
+					a {
+						text-decoration: none;
+						color: $red;
+						font-family: $san-serif;
+						padding: 10px 0;
+					}
+				}
+			}
+		}
+	}
+}
