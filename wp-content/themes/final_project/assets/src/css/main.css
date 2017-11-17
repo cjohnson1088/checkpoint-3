@@ -180,14 +180,14 @@ a img.aligncenter {
 \*------------------------------------*/
 /*------------------------------------*    #ARROWS
 \*------------------------------------*/
-/* Angled Bracket 
+/* Angled Bracket
 Reference: http://stackoverflow.com/questions/27492191/how-to-make-a-fancy-arrow-using-css */
 /*------------------------------------*    #ZINDEX
 
     Controls all vertical stacking in one place
     Reference: http://css-tricks.com/handling-z-index/
 
-    
+
     Can now use elsewhere in code with:
 
     	.header {
@@ -595,8 +595,8 @@ footer {
     Reference: http://www.mademyday.de/css-height-equals-width-with-pure-css.html
 
     DOM should look like this:
-    	| <div class="ratio__box"> 
-		| 	<div class="ratio__content">Aspect ratio of 1:1</div> 
+    	| <div class="ratio__box">
+		| 	<div class="ratio__content">Aspect ratio of 1:1</div>
 		| </div>
 
 	** Just remember, these are set up as extends and not as actual class names **

@@ -106,15 +106,6 @@
 		&#current-page{
 			text-shadow: 0 3px 4px rgba(31, 31, 31, 0.75);
 		}
-
-		img {
-			width: 25%;
-			max-width: 142px;
-
-			@include breakpoint(small) {
-				width: 75%;
-			}
-		}
 	}
 
 	ul {
@@ -142,10 +133,28 @@
 				color: $maroon;
 				text-transform: uppercase;
 
+				img {
+					width: 25%;
+					max-width: 142px;
+
+					@include breakpoint(small) {
+						width: 75%;
+					}
+				}
+
 				&#current-page {
 					color: $beige;
 				}
 			}
 		}
 	}
+}
+
+object {
+		width: 25%;
+		max-width: 142px;
+
+		@include breakpoint(small) {
+			width: 75%;
+		}
 }

@@ -7,25 +7,21 @@ get_header(); ?>
 <!-- MOBILE NAVIGATION -->
     <nav class="mobile-home-nav">
       <ul>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/index.html"><img src="assets/dist/img/allure-main-logo.png" alt="Allure Salon & Spa" title="Allure Salon & Spa"></a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/salon-services.html">Salon Services</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/spa-services.html">Spa Services</a></li>
-        <li><a href="#">Spa Packages</a></li>
-        <li><a href="#">Our Blog</a></li>
+        <li><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/dist/img/allure-main-logo.png"/></a></li>
+        <?php html5blank_nav_left(); ?>
+        <?php html5blank_nav_right(); ?>
       </ul>
     </nav>
 
     <!-- BACKGROUND IMAGE -->
-    <img class="background background" src="<?php bloginfo('template_url'); ?>/assets/dist/img/red-hair-bg.jpg" alt="hello gorgeous" title="hello gorgeous">
+    <img class="background" src="<?php bloginfo('template_url'); ?>/assets/dist/img/red-hair-bg.jpg" alt="hello gorgeous" title="hello gorgeous">
 
     <!-- NAVIGATION -->
     <nav class="home-nav">
       <ul>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/salon-services.html">Salon Services</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/spa-services.html">Spa Services</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/index.html"><img src="assets/dist/img/allure-main-logo.png" alt="Allure Salon & Spa" title="Allure Salon & Spa"></a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/spa-packages.html">Spa Packages</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/our-blog.html">Our Blog</a></li>
+        <?php html5blank_nav_left(); ?>
+        <li><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/dist/img/allure-main-logo.png"/></a></li>
+        <?php html5blank_nav_right(); ?>
       </ul>
     </nav>
 
@@ -47,7 +43,7 @@ get_header(); ?>
     <div class="card-wrapper threading">
       <div class="card">
         <div class="card-image">
-          <img src="/assets/dist/img/threading-girl.jpg" alt="brow threading" title="brow threading">
+          <img src="<?php bloginfo('template_url'); ?>/assets/dist/img/threading-girl.jpg" alt="brow threading" title="brow threading">
         </div>
         <div class="card-content">
           <h3 class="centered">What is Threading?</h3>
@@ -67,7 +63,7 @@ get_header(); ?>
           <p class="centered">GIFT CERTIFICATES AVAILABLE IN STORE!</p>
         </div>
         <div class="card-image">
-          <img src="/assets/dist/img/fun-pink-hair.jpg" alt="pink hair" title="pink hair">
+          <img src="<?php bloginfo('template_url'); ?>/assets/dist/img/fun-pink-hair.jpg" alt="pink hair" title="pink hair">
         </div>
       </div>
     </div>
@@ -76,29 +72,10 @@ get_header(); ?>
       <div class="grid">
 
     <!-- NEWSLETTER SIGN UP -->
-        <form class="centered">
-          <h4><span class="fancy">Sign up today</span> to recieve special deals!</h4>
-
-          <div class="form-field">
-            <div class="names">
-              <label for="name" class="centered">FIRST NAME</label>
-              <input class="centered" type="text" name="first name">
-            </div>
-
-            <div class="names">
-              <label for="name" class="centered">LAST NAME</label>
-              <input class="centered" type="text" name="last name">
-            </div>
-            <div class="email-wrapper">
-              <label for="email" class="centered">E-MAIL</label>
-              <input class="centered" type="email" name="e-mail">
-            </div>
-
-            <div class="submit-btn">
-              <input type="submit" value="Submit">
-            </div>
-          </div>
-        </form>
+    <form class="centered">
+        <h4><span class="fancy">Sign up today</span> to recieve special deals!</h4>
+        <?php echo do_shortcode('[contact-form-7 id="57" title="Mailing Subscription"]'); ?>
+    </form>
 
       <!-- LOCATION & HOURS -->
         <div class="location">
@@ -121,7 +98,7 @@ get_header(); ?>
           </div>
         </div>
       </div>
-          <p class="copywrite centered">ALLURE SALON & SPA &#169; 2017 | DESIGNED BY CAITLIN JOHNSON DESIGNS</p>
+          <p class="copywrite centered">ALLURE SALON & SPA &#169; <?= date('Y'); ?> | DESIGNED BY CAITLIN JOHNSON DESIGNS</p>
     </footer>
 
 <?php get_footer(); ?>

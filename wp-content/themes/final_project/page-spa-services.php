@@ -8,19 +8,17 @@ get_header(); ?>
 
 <!-- NAVIGATION -->
     <nav class="pages-nav centered">
-      <a href="http://www.caitlinaudreyjohnson.com/allure/index.html"><img src="<?php bloginfo('template_url'); ?>/assets/dist/img/allure-alt-logo-pink.png" alt="Allure Salon & Spa" title="Allure Salon & Spa"></a>
       <ul>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/salon-services.html">Salon Services</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/spa-services.html" id="current-page">Spa Services</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/spa-packages.html">Spa Packages</a></li>
-        <li><a href="http://www.caitlinaudreyjohnson.com/allure/our-blog.html">Our Blog</a></li>
+        <li><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/dist/img/allure-alt-logo-pink.png"/></a></li>
+        <?php html5blank_nav_left(); ?>
+        <?php html5blank_nav_right(); ?>
       </ul>
 
       <!-- SOCIAL MEDIA LINKS -->
       <div class="sub-page-social-media">
-        <a href="http://www.facebook.com"><svg class="icon icon-facebook pink"><use xlink:href="#icon-facebook"></use></svg></a>
-        <a href="http://www.instagram.com"><svg class="icon icon-instagram pink"><use xlink:href="#icon-instagram"></use></svg></a>
-        <a href="http://www.twitter.com"><svg class="icon icon-twitter pink"><use xlink:href="#icon-twitter"></use></svg></a>
+        <a href="#"><svg class="icon icon-facebook pink"><use xlink:href="#icon-facebook"></use></svg></a>
+        <a href="#"><svg class="icon icon-instagram pink"><use xlink:href="#icon-instagram"></use></svg></a>
+        <a href="#"><svg class="icon icon-twitter pink"><use xlink:href="#icon-twitter"></use></svg></a>
       </div>
     </nav>
 
@@ -100,7 +98,7 @@ get_header(); ?>
         <p>MONDAY</p><p class="bold">CLOSED</p>
       </div>
 
-      <p class="copywrite centered">ALLURE SALON & SPA &#169; 2017 | DESIGNED BY CAITLIN JOHNSON DESIGNS</p>
+      <p class="copywrite centered">ALLURE SALON & SPA &#169; <?= date('Y'); ?> | DESIGNED BY CAITLIN JOHNSON DESIGNS</p>
 
     </footer>
 </div>

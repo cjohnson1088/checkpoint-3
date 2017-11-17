@@ -67,11 +67,11 @@ if (function_exists('add_theme_support'))
 \*------------------------------------*/
 
 // HTML5 Blank navigation
-function html5blank_nav()
+function html5blank_nav_left()
 {
 	wp_nav_menu(
 	array(
-		'theme_location'  => 'header-menu',
+		'theme_location'  => 'header-left-menu',
 		'menu'            => '',
 		'container'       => 'div',
 		'container_class' => 'menu-{menu slug}-container',
@@ -84,7 +84,31 @@ function html5blank_nav()
 		'after'           => '',
 		'link_before'     => '',
 		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
+		'items_wrap'      => '%3$s',
+		'depth'           => 0,
+		'walker'          => ''
+		)
+	);
+}
+
+function html5blank_nav_right()
+{
+	wp_nav_menu(
+	array(
+		'theme_location'  => 'header-right-menu',
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
+		'container_id'    => '',
+		'menu_class'      => 'menu',
+		'menu_id'         => '',
+		'echo'            => true,
+		'fallback_cb'     => 'wp_page_menu',
+		'before'          => '',
+		'after'           => '',
+		'link_before'     => '',
+		'link_after'      => '',
+		'items_wrap'      => '%3$s',
 		'depth'           => 0,
 		'walker'          => ''
 		)
@@ -101,18 +125,18 @@ function html5blank_header_scripts()
 }
 
 // Load HTML5 Blank conditional scripts
-function html5blank_conditional_scripts()
-{
-    if (is_page('salon-services')) {
-        wp_register_script('salon-services-js', get_template_directory_uri() . '/assets/dist/js/pages/salon-services-dist.js', array('jquery', 'allure-js'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('salon-services-js'); // Enqueue it!
-    }
-}
+//function html5blank_conditional_scripts()
+//{
+//    if (is_page('salon-services')) {
+//        wp_register_script('salon-services-js', get_template_directory_uri() . '/assets/dist/js/pages/salon-services-dist.js', array('jquery', 'allure-js'), '1.0.0'); // Conditional script(s)
+//        wp_enqueue_script('salon-services-js'); // Enqueue it!
+//    }
+//}
 
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('allure-styles', get_template_directory_uri() . '/assets/dist/css/main-dist.css', array(), '1.0', 'all');
+    wp_register_style('allure-styles', get_template_directory_uri() . '/assets/dist/css/main.css', array(), '1.0', 'all');
     wp_enqueue_style('allure-styles'); // Enqueue it!
 }
 
@@ -120,7 +144,8 @@ function html5blank_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
+        'header-left-menu' => __('Header Left Menu', 'html5blank'), // Main Navigation
+        'header-right-menu' => __('Header Right Menu', 'html5blank'), // Main Navigation
     ));
 }
 
@@ -388,7 +413,7 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
  		'redirect'		=> false
  	));
 
- 	/* acf_add_options_sub_page(array(
+ 	 acf_add_options_sub_page(array(
  		'page_title' 	=> 'Theme Header Settings',
  		'menu_title'	=> 'Header',
  		'parent_slug'	=> 'theme-general-settings',
@@ -398,9 +423,36 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
  		'page_title' 	=> 'Theme Footer Settings',
  		'menu_title'	=> 'Footer',
  		'parent_slug'	=> 'theme-general-settings',
- 	)); */
+ 	));
 
  }
 
+ // MOVE COMMENT AREA TO bottom
+ function wpb_move_comment_field_to_bottom ( $fields ) {
+  $comment_field = $fields [ 'comment' ];
+  unset ( $fields [ 'comment' ] );
+  $fields [ 'comment' ] = $comment_field;
+  return $fields;
+  }
+add_filter ( 'comment_form_fields' , 'wpb_move_comment_field_to_bottom' );
+
+// CUSTOM COMMENT walker
+function ahha_comments($comment, $args, $depth) {
+      $GLOBALS['comment'] = $comment; ?>
+      <div class="row" id="li-comment-<?php comment_ID(); ?>">
+           <div class="large-offset-1 columns large-2"><?php echo get_avatar($comment,'140'); ?></div>
+           <div class="large-8 columns end">
+                <?php if ($comment->comment_approved == '0') : ?>
+                   <em><?php _e('Your comment is awaiting moderation.') ?></em><br />
+                 <?php endif; ?>
+
+                <p><strong><em>On <?php echo get_comment_date('F d, Y') . ', '; echo get_comment_author_link(); ?> said:</em></strong><br />
+                <?php edit_comment_link(__('(Edit)<br />'),'  ',''); ?>
+                <?= get_comment_text(); ?></p>
+           </div>
+      </div><!-- /.row -->
+      <hr class="space" />
+      <?php
+ }
 
 // TODO: INCLUDE AH HA CREATIVE BRANDED LOGIN SCREEN

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
@@ -45,4 +45,42 @@ function create_post_type_html5()
         )
     );
     */
+
+    /* SALON SEVICES */
+    register_post_type('packages', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => __('packages', 'html5blank'), // Rename these to suit
+            'singular_name' => __('package', 'html5blank'),
+            'add_new' => __('Add New', 'html5blank'),
+            'add_new_item' => __('Add New package', 'html5blank'),
+            'edit' => __('Edit', 'html5blank'),
+            'edit_item' => __('Edit packages', 'html5blank'),
+            'new_item' => __('New packages', 'html5blank'),
+            'view' => __('View packages', 'html5blank'),
+            'view_item' => __('View packages', 'html5blank'),
+            'search_items' => __('Search packages', 'html5blank'),
+            'not_found' => __('No packages found', 'html5blank'),
+            'not_found_in_trash' => __('No packages found in Trash', 'html5blank')
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'menu_icon' => 'dashicons-star-filled',   // http://www.kevinleary.net/wordpress-dashicons-list-custom-post-type-icons/
+        'can_export' => true // Allows export in Tools > Export
+    ));
+    register_taxonomy(
+        'type_of_spa-packages',    // Taxonomy
+        'Spa Packages',             // Object Type
+        array(
+            'label' => __( 'Type of Spa Package' ),
+            'rewrite' => array( 'slug' => 'type' ),
+            'hierarchical' => true, // Is this taxonomy hierarchical like categories or not hierarchical like tags.
+        )
+    );
 }
