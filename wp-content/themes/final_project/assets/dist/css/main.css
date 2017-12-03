@@ -351,6 +351,25 @@ input[type="email"] {
       max-width: 25px;
       max-height: 25px; }
 
+#respond {
+  width: 75%; }
+  #respond form p label {
+    padding-left: 10px;
+    position: relative;
+    top: 25px; }
+  #respond form p input[type="text"],
+  #respond form p input[type="email"] {
+    background-color: #f2dbce;
+    border-bottom: none;
+    padding-left: 75px;
+    color: #591616; }
+  #respond form p textarea {
+    background-color: #f2dbce;
+    border-bottom: none;
+    padding-left: 85px;
+    padding-top: 10px;
+    color: #591616; }
+
 /*------------------------------------*    #HR
 \*------------------------------------*/
 .hr--space {
@@ -839,7 +858,6 @@ article {
   border: #a65e58 solid 3px;
   padding: 10px;
   margin-top: 10px;
-  width: 25%;
   max-width: 236px; }
 
 .row {
@@ -1033,6 +1051,9 @@ aside {
           font-family: "minerva-modern", sans-serif;
           padding: 10px 0; }
 
+.video-widget-wrapper {
+  margin-top: 20px; }
+
 /*------------------------------------*    #PAGES
 \*------------------------------------*/
 body {
@@ -1166,5 +1187,22 @@ form.search {
       .sidebar-widget ul li a {
         color: #8c2a2a;
         text-decoration: none; }
+
+article h1 {
+  text-align: center;
+  padding-top: 50px;
+  color: #591616; }
+
+article a {
+  color: #591616; }
+  article a:hover {
+    color: #8c2a2a; }
+
+article#post-404 {
+  width: 100%;
+  text-align: center; }
+  @media (min-width: 768px) {
+    article#post-404 {
+      padding-top: 200px; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -127,3 +127,35 @@ input[type="email"] {
 		}
 	}
 }
+
+// COMMENT FORM
+#respond {
+	width: 75%;
+
+	form {
+		p{
+
+			label {
+				padding-left: 10px;
+				position: relative;
+				top: 25px;
+			}
+
+			input[type="text"],
+			input[type="email"] {
+				background-color: $beige;
+				border-bottom: none;
+				padding-left: 75px;
+				color: $maroon;
+			}
+
+			textarea {
+				background-color: $beige;
+				border-bottom: none;
+				padding-left: 85px;
+				padding-top: 10px;
+				color: $maroon;
+			}
+		}
+	}
+}

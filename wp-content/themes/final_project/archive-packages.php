@@ -15,9 +15,9 @@ get_header(); ?>
 
       <!-- SOCIAL MEDIA LINKS -->
       <div class="sub-page-social-media">
-        <a href="#"><svg class="icon icon-facebook red"><use xlink:href="#icon-facebook"></use></svg></a>
-        <a href="#"><svg class="icon icon-instagram red"><use xlink:href="#icon-instagram"></use></svg></a>
-        <a href="#"><svg class="icon icon-twitter red"><use xlink:href="#icon-twitter"></use></svg></a>
+        <a href="http://www.facebook.com"><svg class="icon icon-facebook red"><use xlink:href="#icon-facebook"></use></svg></a>
+        <a href="http://www.instagram.com"><svg class="icon icon-instagram red"><use xlink:href="#icon-instagram"></use></svg></a>
+        <a href="http://www.twitter.com"><svg class="icon icon-twitter red"><use xlink:href="#icon-twitter"></use></svg></a>
       </div>
     </nav>
 
@@ -31,11 +31,12 @@ get_header(); ?>
         <div class="card-package-wrapper">
 
           <?php if(have_posts()):
+            $color = 'maroon';
             while(have_posts()):
               the_post(); ?>
 
           <!-- BRIDAL PACKAGE -->
-          <div class="package-wrapper maroon">
+          <div class="package-wrapper <?= $color; ?>">
             <div class="package">
               <div class="package-image">
                 <?php the_post_thumbnail(); ?>
@@ -52,6 +53,14 @@ get_header(); ?>
               </div>
             </div>
           </div>
+
+          <?php
+            if ($color == 'maroon') {
+              $color = 'red';
+            } else { // color is red
+              $color = 'maroon';
+            }
+          ?>
 
         <?php endwhile; endif; ?>
 

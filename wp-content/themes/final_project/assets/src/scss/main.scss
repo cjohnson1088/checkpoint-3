@@ -179,3 +179,29 @@ form.search {
 		}
 	}
 }
+
+// 404
+article {
+	h1 {
+		text-align: center;
+		padding-top: 50px;
+		color: $maroon;
+	}
+
+	a {
+		color: $maroon;
+
+		&:hover {
+			color: $red;
+		}
+	}
+
+	&#post-404 {
+		width: 100%;
+		text-align: center;
+
+		@include breakpoint(portrait) {
+			padding-top: 200px;
+		}
+	}
+}

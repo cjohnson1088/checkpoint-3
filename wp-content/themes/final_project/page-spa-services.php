@@ -16,9 +16,9 @@ get_header(); ?>
 
       <!-- SOCIAL MEDIA LINKS -->
       <div class="sub-page-social-media">
-        <a href="#"><svg class="icon icon-facebook pink"><use xlink:href="#icon-facebook"></use></svg></a>
-        <a href="#"><svg class="icon icon-instagram pink"><use xlink:href="#icon-instagram"></use></svg></a>
-        <a href="#"><svg class="icon icon-twitter pink"><use xlink:href="#icon-twitter"></use></svg></a>
+        <a href="http://www.facebook.com"><svg class="icon icon-facebook pink"><use xlink:href="#icon-facebook"></use></svg></a>
+        <a href="http://www.instagram.com"><svg class="icon icon-instagram pink"><use xlink:href="#icon-instagram"></use></svg></a>
+        <a href="http://www.twitter.com"><svg class="icon icon-twitter pink"><use xlink:href="#icon-twitter"></use></svg></a>
       </div>
     </nav>
 

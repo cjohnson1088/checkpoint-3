@@ -322,7 +322,6 @@ article {
 			border: $pink solid 3px;
 			padding: 10px;
 			margin-top: 10px;
-			width: 25%;
 			max-width: 236px;
 		}
 	}
@@ -578,4 +577,9 @@ aside {
 			}
 		}
 	}
+}
+
+// VIDEO WIDGET
+.video-widget-wrapper {
+	margin-top: 20px;
 }

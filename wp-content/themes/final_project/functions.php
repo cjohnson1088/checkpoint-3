@@ -125,13 +125,13 @@ function html5blank_header_scripts()
 }
 
 // Load HTML5 Blank conditional scripts
-//function html5blank_conditional_scripts()
-//{
+function html5blank_conditional_scripts()
+{
 //    if (is_page('salon-services')) {
 //        wp_register_script('salon-services-js', get_template_directory_uri() . '/assets/dist/js/pages/salon-services-dist.js', array('jquery', 'allure-js'), '1.0.0'); // Conditional script(s)
 //        wp_enqueue_script('salon-services-js'); // Enqueue it!
 //    }
-//}
+}
 
 // Load HTML5 Blank styles
 function html5blank_styles()
@@ -455,4 +455,19 @@ function ahha_comments($comment, $args, $depth) {
       <?php
  }
 
-// TODO: INCLUDE AH HA CREATIVE BRANDED LOGIN SCREEN
+// --- ENABLE WIDGETS --- //
+function blank_widgets_init() {
+/* sidebar widget */
+  register_sidebar( array(
+    'name' => ('First Aside Widget'),
+    'id' => 'aside-widget',
+    'description' => 'This widget is for sidebar',
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+    'before_title' => '<h2>',
+    'after_title' => '</h2>'
+  ));
+
+}
+
+add_action('widgets_init', 'blank_widgets_init');
