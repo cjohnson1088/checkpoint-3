@@ -36,23 +36,25 @@ get_header(); ?>
               the_post(); ?>
 
           <!-- BRIDAL PACKAGE -->
-          <div class="package-wrapper <?= $color; ?>">
-            <div class="package">
-              <div class="package-image">
-                <?php the_post_thumbnail(); ?>
-              </div>
-              <div class="package-content">
-                <h2><?php the_title(); ?></h2>
-                <div class="pink-divider"></div>
-                <div class="cenetered"><?php the_content(); ?></div>
+          <div class="margin-wrapper">
+            <div class="package-wrapper <?= $color; ?>">
+              <div class="package">
+                <div class="package-image">
+                  <?php the_post_thumbnail(); ?>
+                </div>
+                <div class="package-content">
+                  <h2><?php the_title(); ?></h2>
+                  <div class="pink-divider"></div>
+                  <div class="cenetered"><?php the_content(); ?></div>
 
-                <!-- BOOK NOW BUTTON -->
-                <div class="pink-book-now-wrapper">
-                  <button type="button" class="pink-book-now">BOOK NOW</button>
+                  <!-- BOOK NOW BUTTON -->
+                  <div class="pink-book-now-wrapper">
+                    <button type="button" class="pink-book-now">BOOK NOW</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
 
           <?php
             if ($color == 'maroon') {

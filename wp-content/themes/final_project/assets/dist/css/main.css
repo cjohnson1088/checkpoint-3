@@ -878,6 +878,10 @@ article {
     width: 75%;
     margin: auto; } }
 
+.margin-auto .margin-wrapper {
+  margin: auto;
+  width: 80%; }
+
 @media (min-width: 640px) {
   .card-package-wrapper {
     margin-top: -25%; } }

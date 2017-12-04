@@ -348,6 +348,11 @@ article {
 		width: 75%;
 		margin: auto;
 	}
+
+	.margin-wrapper {
+		margin: auto;
+		width: 80%;
+	}
 }
 .card-package-wrapper {
 	@include breakpoint(small) {
